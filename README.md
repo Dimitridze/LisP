@@ -19,12 +19,12 @@
 (t (cons (car lst) (zam (cdr lst) w r))))) 
 ```
 
-1) ( print (zam '(1 2 3 1 1) 1 'a) )
+1)        ( print (zam '(1 2 3 1 1) 1 'a) )
 
-    (A 2 3 A A) 
-2)  ( print (zam  '((1 2 3) 4 5 6 1) 1 44) )
+          (A 2 3 A A) 
+2)        ( print (zam  '((1 2 3) 4 5 6 1) 1 44) )
 
-    ((44 2 3) 4 5 6 44)
+          ((44 2 3) 4 5 6 44)
 
     
 # Задача 9
@@ -47,13 +47,13 @@
 ) 
 ```
 
-1)   (print (srt `(a b c d e f g))) 
+1)       (print (srt `(a b c d e f g))) 
 
-     ((A C E G)(B D F NIL))
+         ((A C E G)(B D F NIL))
 
-2)   (print (srt `(nil))) 
+2)       (print (srt `(nil))) 
 
-     (NIL)
+         (NIL)
 
     
 # Задача 20
@@ -71,12 +71,12 @@
 1)      (print (fatom '())) 
 
         NIL
-2)    (print (fatom '(a1 b2 e3))) 
+2)      (print (fatom '(a1 b2 e3))) 
 
-      a1
-3)    (print (fatom '(((123 456)) c d))) 
+        a1
+3)      (print (fatom '(((123 456)) c d))) 
 
-      123
+        123
 
     
 # Задача 28
