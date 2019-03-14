@@ -34,17 +34,20 @@
 
 ``` LISP
 (defun srt (lst) 
-       (cond 
-              ((null (car lst)) lst) 
+    ((lambda (head) 
+       (cond ((null head) lst) 
                       (t (print(setq nlst (srt (cddr lst)))) 
-                      (list 
-                     (print(cons (car lst) (car nlst))) 
-                     (print(cons (cadr lst) (cadr nlst))) 
-
-                     ) 
-              ) 
-      ) 
-) 
+                        (list 
+                         (print(cons head (car nlst))) 
+                         (print(cons (cadr lst) (cadr nlst))) 
+                         )
+                      ) 
+       ) 
+     )            
+      (car lst)
+ 
+    )
+)
 ```
 
 1)       (print (srt `(a b c d e f g))) 
