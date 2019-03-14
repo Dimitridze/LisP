@@ -47,13 +47,13 @@
 ) 
 ```
 
-(print (srt `(a b c d e f g))) 
+1)   (print (srt `(a b c d e f g))) 
 
-((A C E G)(B D F NIL))
+     ((A C E G)(B D F NIL))
 
-;(print (srt `(nil))) 
+2)   (print (srt `(nil))) 
 
-(NIL)
+     (NIL)
 
     
 # Задача 20
@@ -68,18 +68,15 @@
     )
 )
 ```
-(print (fatom '())) 
+1)    (print (fatom '())) 
 
+      NIL
+2)    (print (fatom '(a1 b2 e3))) 
 
-NIL
-(print (fatom '(a1 b2 e3))) 
+      a1
+3)    (print (fatom '(((123 456)) c d))) 
 
-
-a1
-(print (fatom '(((123 456)) c d))) 
-
-
-123
+      123
 
     
 # Задача 28
@@ -98,11 +95,9 @@ a1
         ) 
 ) 
 ```
-(print(hm `(1 a 3 `(e2 e4)) 0)) 
+1)     (print(hm `(1 a 3 `(e2 e4)) 0)) 
 
+       3
+2)     (print(hm () 0)) 
 
-3
-(print(hm () 0)) 
-
-
-0
+       0
