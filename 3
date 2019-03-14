@@ -1,12 +1,11 @@
-(defun rep (lst w r)
-  (let ((res nil))
-    (iter (for x in lst)
-      (cond ((equal x w) (collecting r into res))
-            ((listp x) (collecting (rep x w r) into res))
-            (t (collecting x into res))))))
-            
-            (defun rep (lst w r)
+
+                        (defun zam (lst w r)
   (cond ((null lst) nil)
-        (( eq (car lst) w) (cons r (rep (cdr lst) w r)))
-        ((listp (car lst)) (cons (rep (car lst) w r) (rep (cdr lst) w r)))
-        (t (cons (car lst) (rep (cdr lst) w r))))) 
+        (( eq (car lst) w) (cons r (zam (cdr lst) w r)))
+        ((listp (car lst)) (cons (zam (car lst) w r) (zam (cdr lst) w r)))
+        (t (cons (car lst) (zam (cdr lst) w r))))) 
+        
+ 1) ( print (rep '(1 2 3 1 1) 1 'a) )
+    (A 2 3 A A) 
+2)  ( print (rep '((1 2 3) 4 5 6 1) 1 44) )
+    ((44 2 3) 4 5 6 44)
