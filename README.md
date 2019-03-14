@@ -68,9 +68,9 @@
     )
 )
 ```
-1)    (print (fatom '())) 
+1)      (print (fatom '())) 
 
-      NIL
+        NIL
 2)    (print (fatom '(a1 b2 e3))) 
 
       a1
