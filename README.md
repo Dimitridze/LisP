@@ -49,10 +49,12 @@
 
 (print (srt `(a b c d e f g))) 
 
-;(print (srt `(1 nil))) 
-;(print (srt `(1 2 3))) 
+((A C E G)(B D F NIL))
+
 ;(print (srt `(nil))) 
-;9
+
+(NIL)
+
     
 # Задача 20
 
@@ -67,10 +69,16 @@
 )
 ```
 (print (fatom '())) 
+
+
 NIL
 (print (fatom '(a1 b2 e3))) 
+
+
 a1
 (print (fatom '(((123 456)) c d))) 
+
+
 123
 
     
@@ -91,6 +99,10 @@ a1
 ) 
 ```
 (print(hm `(1 a 3 `(e2 e4)) 0)) 
+
+
 3
 (print(hm () 0)) 
+
+
 0
