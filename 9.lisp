@@ -18,14 +18,6 @@
     )
 )
 
-      (print (srt `(a b c d e f g))) 
-
-      ((A C E G)(B D F NIL))
-
-      (print (srt `(nil))) 
-
-      (NIL)
-
 
 
 ;(print (srt `(a b c d e f g)))
