@@ -14,7 +14,7 @@
 
 ;(print(Road 'New_York 'Dzhankoi))
 ;2128.362 
-;(print(Road 'New_York ))
-;2128.362 
+;(print(Road 'Dzhankoi ))
+;0
 ;(print(Road 'Dzhankoi 'New_York))
 ;2128.362 
