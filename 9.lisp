@@ -1,20 +1,35 @@
+Задача 9
+
+Определите функцию, раздляющую список на 2 списка. С четными номерами и нечетными.
+
 (defun srt (lst) 
-   (cond 
-     ((null (car lst)) lst) 
-       (t (print(setq nlst (srt (cddr lst)))) 
-       (list 
-       (print(cons (car lst) (car nlst))) 
+    ((lambda (head) 
+       (cond ((null head) lst) 
+                      (t (print(setq nlst (srt (cddr lst)))) 
+                        (list 
+                         (print(cons head (car nlst))) 
+                         (print(cons (cadr lst) (cadr nlst))) 
+                         )
+                      ) 
+       ) 
+     )            
+      (car lst)
+ 
+    )
+)
 
-       (print(cons (cadr lst) (cadr nlst))) 
+      (print (srt `(a b c d e f g))) 
 
-      ) 
-     ) 
-   ) 
-) 
+      ((A C E G)(B D F NIL))
 
-(print (srt `(a b c d e f g)))
-((A C E G) (B D F NIL)) 
-;(print (srt `(1 nil))) 
-;(print (srt `(1 2 3))) 
+      (print (srt `(nil))) 
+
+      (NIL)
+
+
+
+;(print (srt `(a b c d e f g)))
+;((A C E G) (B D F NIL)) 
+
 ;(print (srt `(nil))) 
-;9
+  ;(NIL)
