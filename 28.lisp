@@ -1,5 +1,5 @@
 
-(defun hm(lst kolv) 
+(defun hm(lst &optional (kolv 0)) 
    ((lambda(tail) 
      (cond 
        ((null lst) kolv) 
@@ -12,7 +12,7 @@
     )
          (cdr lst)
    )   
-) 
+)
 
 
 (print(hm `(1 a 3 `(e2 e4)) 0)) 
