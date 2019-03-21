@@ -1,4 +1,8 @@
-(defun del (1st 2nd)
+Задача 40
+
+Определите функцию РАЗНОСТЬ, формирующую разность двух множеств, т.е. удаляющую из первого множества все общие со вторым множеством элементы
+
+ (defun del (1st 2nd)
     (
         (lambda (first rest)
             (cond
@@ -23,8 +27,11 @@
     )
 )
 
-(print (dif `(1 2 3 4) `(2 3 4 5)))
-(1)
+     
 
-(print (dif `(Hello My World) `(My)))
-(HELLO WORLD)
+
+;(print (dif `(1 2 3 4) `(2 3 4 5)))
+;(1)
+
+;(print (dif `(Hello My World) `(My)))
+;(HELLO WORLD)
