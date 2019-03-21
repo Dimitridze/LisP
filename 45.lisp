@@ -1,6 +1,6 @@
 ;45. Напишите функцию (РАССТОЯНИЕ c1 c2), вычисляющую расстояние между городами.
 
-(defun Road (c1 c2) 
+(defun Road (c1 &optional(c2 `Dzhankoi)) 
   (sqrt (+ (expt (- (get c1 'x) (get c2 'x)) 2)
            (expt (- (get c1 'y) (get c2 'y)) 2))
   )
