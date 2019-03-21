@@ -136,7 +136,7 @@
 Определите функцию, вычисляющую, сколько всего атомов в списке.
 
 ``` LISP
-(defun hm(lst kolv) 
+(defun hm(lst &optional (kolv 0)) 
    ((lambda(tail) 
      (cond 
        ((null lst) kolv) 
