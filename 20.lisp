@@ -2,7 +2,7 @@
 
 Определите функцию, Первый-Атом, результатом которой будет первый атом списка.
 
-( defun fatom (arr)
+( defun fatom ($key arr)
     (cond
         ((not (listp arr)) arr)
         ((null arr) NIL)
