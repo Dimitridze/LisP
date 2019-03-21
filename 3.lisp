@@ -2,7 +2,7 @@
 
 Определите функцию, заменяющую в исходном списке все вхождения заданного значения другими
 
- (defun rep (lst w r)
+ (defun rep (lst w &key (r 0))
     ((lambda (first rest)
         (cond ((null lst) nil)
         (( eq first w) (cons r (rep rest w r)))
