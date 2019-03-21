@@ -1,13 +1,17 @@
 
 (defun hm(lst kolv) 
-(cond 
-((null lst) kolv) 
+   ((lambda(tail) 
+     (cond 
+       ((null lst) kolv) 
 
-((atom (car lst)) (hm (cdr lst) (+ kolv 1))) 
+       ((atom (car lst)) (hm tail (+ kolv 1))) 
 
-(t (hm (cdr lst) kolv)) 
+       (t (hm tail kolv)) 
 
-) 
+     )
+    )
+         (cdr lst)
+   )   
 ) 
 
 
