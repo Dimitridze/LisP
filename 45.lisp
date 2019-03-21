@@ -12,7 +12,7 @@
 (setf (get 'Dzhankoi 'x) -300)
 (setf (get 'Dzhankoi 'y) 50)
 
-(print(Road 'New_York 'Dzhankoi))
-2128.362 
-(print(Road 'Dzhankoi 'New_York))
-2128.362 
+;(print(Road 'New_York 'Dzhankoi))
+;2128.362 
+;(print(Road 'Dzhankoi 'New_York))
+;2128.362 
