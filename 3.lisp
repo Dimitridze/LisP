@@ -1,9 +1,14 @@
-
-                        (defun zam (lst w r)
-  (cond ((null lst) nil)
-        (( eq (car lst) w) (cons r (zam (cdr lst) w r)))
-        ((listp (car lst)) (cons (zam (car lst) w r) (zam (cdr lst) w r)))
-        (t (cons (car lst) (zam (cdr lst) w r))))) 
+(defun zam (lst w r)
+    ((lambda (first rest)
+        (cond ((null lst) nil)
+        (( eq first w) (cons r (zam rest w r)))
+        ((listp first) (cons (zam first w r) (zam rest w r)))
+        (t (cons first (zam rest w r))))
+     )
+     
+     (car lst)(cdr lst)
+   )
+)
         
  1) ( print (rep '(1 2 3 1 1) 1 'a) )
     (A 2 3 A A) 
