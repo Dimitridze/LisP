@@ -1,3 +1,7 @@
+Задача 20
+
+Определите функцию, Первый-Атом, результатом которой будет первый атом списка.
+
 ( defun fatom (arr)
     (cond
         ((not (listp arr)) arr)
@@ -6,7 +10,11 @@
     )
 )
 
-(print (fatom '())) ;NIL
-(print (fatom '(a1 b2 e3))) ;a1
-(print (fatom '(((123 456)) c d))) ;123
+     ;(print (fatom '())) 
+
+    ; NIL
+
+     ;(print (fatom '(a1 b2 e3))) 
+
+    ; a1
 
