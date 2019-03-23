@@ -2,13 +2,15 @@
 
 ;Определите функцию, Первый-Атом, результатом которой будет первый атом списка.
 
-(defun fatom ($key arr)
+(defun fatom (arr)
     (cond
-        ((not (listp arr)) arr)
+        ((atom arr) arr)
         ((null arr) NIL)
         (t (fatom (car arr)))
     )
 )
+
+
 
 ;(print (fatom '())) 
 ;NIL
