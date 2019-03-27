@@ -63,10 +63,10 @@
 (defun srt (lst) 
     ((lambda (head) 
        (cond ((null head) lst) 
-                      (t (print(setq nlst (srt (cddr lst)))) 
+                      (t (setq nlst (srt (cddr lst))) 
                         (list 
-                         (print(cons head (car nlst))) 
-                         (print(cons (cadr lst) (cadr nlst))) 
+                         (cons head (car nlst)) 
+                         (cons (cadr lst) (cadr nlst)) 
                          )
                       ) 
        ) 
