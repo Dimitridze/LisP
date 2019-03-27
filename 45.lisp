@@ -6,9 +6,9 @@
   )
 )
  
-(defun City(Sym &key x y ) 
-    (setf (get Sym 'x) x)
-    (setf (get Sym 'y) y)
+(defun City(N &key x y ) 
+    (setf (get N 'x) x)
+    (setf (get N 'y) y)
   
 )
 
