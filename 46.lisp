@@ -13,7 +13,7 @@
 	(list (get human `mom) (get human `dad))
   )
 
-(defun fam(1stuman 2ndhuman)
+(defun fam(1sthuman 2ndhuman)
 	(cond
 		((eq (get 1sthuman `mom) (get 2ndhuman `mom)) t)
 		((eq (get 1sthuman `dad) (get 2ndhuman `dad)) t)
@@ -28,7 +28,7 @@
 	 (setprop 2ndhuman (car secondP) (cadr secondP))
 	 (print(par 1sthuman))
 	 (print(par 2ndhuman))
-	 (fam 1sthuman 2ndhuman)
+	 (print(fam 1sthuman 2ndhuman))
  )
 
  
@@ -36,7 +36,15 @@
 ;(prog `a `b `(c d) `(e g))
 ;(C D) 
 ;(E G) 
+;NIL
 
 ;(prog `a `b `(c d) `(d c))
 ;(C D) 
 ;(D C) 
+;T
+
+;(prog `a `b `(c d) `(c v))
+;(C D) 
+;(C V) 
+;T
+
