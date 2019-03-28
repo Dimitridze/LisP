@@ -15,14 +15,12 @@
                        )
                     )
              )
-        ) (car arr) (cadr arr) (cddr arr)(separate rest)
+        ) (car arr) (cadr arr) (cddr arr)
     )
 )
 
 
 
-;(print (srt `(a b c d e f g)))
-;((A C E G) (B D F NIL)) 
+;(print (separate `(a b c d e f g)))
+;((A C E G) (B D F)) 
 
-;(print (srt `(nil))) 
-  ;(NIL)
