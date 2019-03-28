@@ -1,14 +1,14 @@
 ;45. Напишите функцию (РАССТОЯНИЕ c1 c2), вычисляющую расстояние между городами.
 
-(defun Road (c1 &optional(c2 `Bahchisaray)) 
-  (sqrt (+ (expt (- (get c1 'x) (get c2 'x)) 2)
-           (expt (- (get c1 'y) (get c2 'y)) 2))
+(defun Road (city1 &optional(city2 `Bahchisaray)) 
+  (sqrt (+ (expt (- (get city1 'x) (get city2 'x)) 2)
+           (expt (- (get city1 'y) (get city2 'y)) 2))
   )
 )
  
-(defun City(N &key x y ) 
-    (setf (get N 'x) x)
-    (setf (get N 'y) y)
+(defun City(Name-of-the-city &key x y ) 
+    (setf (get Name-of-the-city 'x) x)
+    (setf (get Name-of-the-city 'y) y)
   
 )
 
