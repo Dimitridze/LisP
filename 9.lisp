@@ -15,7 +15,7 @@
                        )
                     )
              )
-        ) (car arr) (cadr arr) (cddr arr)
+        ) (car arr) (cadr arr) (cddr arr)(separate rest)
     )
 )
 
