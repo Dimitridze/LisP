@@ -1,17 +1,18 @@
 ;Задача 40
 
-;Определите функцию РАЗНОСТЬ, формирующую разность двух множеств, т.е. удаляющую из первого множества все общие со вторым множеством элементы
+;Определите функцию РАЗНОСТЬ, формирующую разность двух множеств, т.е. удаляющую из первого множества все общие со вторым
+;множеством элементы
 
- (defun del ($key 1st 2nd)
+ (defun del (set el)
     (
         (lambda (first rest)
             (cond
-                ((null 1st) NIL)
-                ((equalp first 2nd) rest)
-                (t (cons first (del rest 2nd)))
+                ((null set) NIL)
+                ((equalp first el) rest)
+                (t (cons first (del rest el)))
             )   
         )
-        (car 1st) (cdr 1st)
+        (car set) (cdr set)
     )
 )
  
