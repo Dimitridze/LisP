@@ -56,34 +56,34 @@
     
 # Задача 9
 
-Определите функцию, раздляющую список на 2 списка.
-С четными номерами и нечетными.
+Задача 9
 
-``` LISP
-(defun srt (lst) 
-    ((lambda (head) 
-       (cond ((null head) lst) 
-                      (t (setq nlst (srt (cddr lst))) 
-                        (list 
-                         (cons head (car nlst)) 
-                         (cons (cadr lst) (cadr nlst)) 
-                         )
-                      ) 
-       ) 
-     )            
-      (car lst)
- 
+;Определите функцию, раздляющую список на 2 списка. С четными номерами и нечетными.
+
+(defun separate (arr)
+    ( 
+         (lambda (first second rest) 
+             (
+                 cond
+                    ( (null arr) (list NIL NIL))
+                    ((null second) (list (list first) NIL))
+                    (T (list 
+                            (cons first (car (separate rest))) 
+                            (cons second (cadr (separate rest))) 
+                       )
+                    )
+             )
+        ) (car arr) (cadr arr) (cddr arr)(separate rest)
     )
 )
-```
 
-1)       (print (srt `(a b c d e f g))) 
 
-         ((A C E G)(B D F NIL))
 
-2)       (print (srt `(nil))) 
+;(print (srt `(a b c d e f g)))
+;((A C E G) (B D F NIL)) 
 
-         (NIL)
+;(print (srt `(nil))) 
+;(NIL)
 	 
 	 
  # Задача 17
