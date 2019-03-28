@@ -2,19 +2,20 @@
 
 ;Определите функцию, раздляющую список на 2 списка. С четными номерами и нечетными.
 
-(defun srt (lst) 
-    ((lambda (head) 
-       (cond ((null head) lst) 
-                      (t (setq nlst (srt (cddr lst))) 
-                        (list 
-                         (cons head (car nlst)) 
-                         (cons (cadr lst) (cadr nlst))
-                         )
-                      ) 
-       ) 
-     )            
-      (car lst)
- 
+(defun separate (arr)
+    ( 
+         (lambda (first second rest) 
+             (
+                 cond
+                    ( (null arr) (list NIL NIL))
+                    ((null second) (list (list first) NIL))
+                    (T (list 
+                            (cons first (car (separate rest))) 
+                            (cons second (cadr (separate rest))) 
+                       )
+                    )
+             )
+        ) (car arr) (cadr arr) (cddr arr)
     )
 )
 
