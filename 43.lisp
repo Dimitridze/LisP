@@ -11,7 +11,11 @@
 ;(print (tree-count '(((nil 2 nil) 6 (nil -8 nil)) 7 (nil 12 nil)) 1))
  
 ;2
- 
+;     7
+;   /  \
+;  6    12
+; / \
+;2   -8
 ;(tree-count '(((nil 2 nil) 6 (nil -8 nil)) 7 (nil 12 nil)) 3)
  
 ;0
