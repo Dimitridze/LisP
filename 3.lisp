@@ -2,15 +2,15 @@
 
 ;Определите функцию, заменяющую в исходном списке все вхождения заданного значения другими
 
- (defun rep (lst  w  (r 0))
-    ((lambda (first rest)
+ (defun changing(lst need-change turn-on)
+    ((lambda (first rekurs)
         (cond ((null lst) nil)
-           (( eq first w) (cons r (rep rest w r)))
-           ((listp first) (cons (rep first w r) (rep rest w r)))
-           (t (cons first (rep rest w r))))
+        (( eq first need-change) (cons turn-on rekurs))
+       ((listp first) (cons (changing  need-change turn-on) rekurs))
+        (t (cons first rekurs)))
      )
      
-     (car lst)(cdr lst)
+     (car lst)(changing cdr lst w r)
    )
 )
         
