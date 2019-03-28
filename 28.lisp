@@ -2,17 +2,16 @@
 
 ;Определите функцию, вычисляющую, сколько всего атомов в списке.
 
-(defun hm(lst &optional (kolv 0)) 
-   ((lambda(tail) 
-       (cond 
-           ((null lst) kolv) 
-           ((atom (car lst)) (hm tail (+ kolv 1))) 
-           (t (hm tail kolv)) 
-       )
-    )
-    (cdr lst)
-    )   
-) 
+(defun atom-count(lst)
+	((lambda (first rest) 
+		(cond
+			((null lst) 0)
+			((atom first) (+ 1 (atom-count rest)))
+			(t (atom-count rest))
+		)
+	)(car lst) (cdr lst))
+	
+)
 
 ;(print(hm `(1 a 3 `(e2 e4)) 0)) 
 ;3
