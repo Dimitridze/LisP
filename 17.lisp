@@ -10,7 +10,7 @@
         ( t (add-elem-to-each-permutation (car lst) (permutation (cdr lst) ) ) )
     )
 )
-;вставка элемента в перестановки и соединение их в список
+;соединение перестановок в список их в список
 (defun add-elem-to-each-permutation (elem perm-lst)
     
     (cond
