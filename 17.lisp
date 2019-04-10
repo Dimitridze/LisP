@@ -32,7 +32,7 @@
              (cons elem lst) (insert-elem-to-each-pos-aux elem nil lst) ) ) 
     )
 )
-;"вспомогательная" вставка элемента в разобранную перестановку
+; вставка элемента в разобранную перестановку
 (defun insert-elem-to-each-pos-aux (elem lst1 lst2)
     
     (cond
