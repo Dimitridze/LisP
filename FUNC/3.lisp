@@ -16,10 +16,10 @@
 )
 
 
-(defun Sum (x) (+ x x))
+(defun Double (x) (+ x x))
 
-(defun Mul (x) (* x x))
+(defun Sqr (x) (* x x))
 
  
-(print (apl-apply '(Sum Sum Sum Mul Mul Mul) '(1 2 3 4 5 6)))
+(print (apl-apply '(Double Double Double Sqr Sqr Sqr) '(1 2 3 4 5 6)))
 ;(2 4 6 16 25 36) 
