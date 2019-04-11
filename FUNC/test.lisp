@@ -1,15 +1,11 @@
 ;4. Определите функциональный предикат(КАЖДЫй пред список), который истинен в том и только в том случае, 
 ;когда, являющейся функциональным аргументом предикат пред истинен для всех элементов списка.
 
-(defun every1 (pr lst)
-  (cond ((null lst) t)
-        (t (and (funcall pr (car lst)) (every1 pr (cdr lst))))
-  )
+(defun every1 (fn lst)
+  (not (member nil (mapcar fn lst)))
 )
-
-
- 
-(print (every1 'evenp  '(2 4 6 8)))
+   
+(print (every1 'evenp  '(8 10 12)))
 ;T
-(print (every1 'evenp  '(2 4 6 7)))
+(print (every1 'evenp  '(7 8 9 10)))
 ;NIL
