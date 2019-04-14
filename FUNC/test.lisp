@@ -9,3 +9,7 @@
 ;T
 (print (every1 'evenp  '(7 8 9 10)))
 ;NIL
+(print (every1 'numberp  '(8 10 12)))
+;T
+(print (every1 'numberp  '(8 a 10 12)))
+;NIL
