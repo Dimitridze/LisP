@@ -2,6 +2,15 @@
 
 ;Создайте предикат, порождающий всевозможные перестановки исходного множества
 
+;На вход
+;  (PERMUTATION '(1 2 3))
+;  (PERMUTATION '(2 3))
+;  (PERMUTATION '(3))
+
+;На выход
+; PERMUTATION ==> ((3))
+; PERMUTATION ==> ((2 3) (3 2))
+; PERMUTATION ==> ((1 2 3) (2 1 3) (2 3 1) (1 3 2) (3 1 2) (3 2 1))
 (defun permutation (lst)
     
     (cond
@@ -10,9 +19,26 @@
         ( t (add-elem-to-each-permutation (car lst) (permutation (cdr lst) ) ) )
     )
 )
+
 ;соединение перестановок в список 
-;>(1 и (2 3))
-;((1 2 3)(2 1 3)(2 3 1))....
+
+;На вход 
+;(ADD-ELEM-TO-EACH-PERMUTATION '2 '((3)))
+;(ADD-ELEM-TO-EACH-PERMUTATION '2 'NIL)
+
+;На выход
+;ADD-ELEM-TO-EACH-PERMUTATION ==> ((2 3) (3 2))
+;ADD-ELEM-TO-EACH-PERMUTATION ==> NIL
+
+;На вход
+;(ADD-ELEM-TO-EACH-PERMUTATION '1 'NIL)
+;(ADD-ELEM-TO-EACH-PERMUTATION '1 '((3 2)))
+;(ADD-ELEM-TO-EACH-PERMUTATION '1 '((2 3) (3 2)))
+
+;На Выход
+;ADD-ELEM-TO-EACH-PERMUTATION ==> NIL
+;ADD-ELEM-TO-EACH-PERMUTATION ==> ((1 3 2) (3 1 2) (3 2 1))
+;ADD-ELEM-TO-EACH-PERMUTATION ==> ((1 2 3) (2 1 3) (2 3 1) (1 3 2) (3 1 2) (3 2 1))
 (defun add-elem-to-each-permutation (elem perm-lst)
     
     (cond
@@ -24,7 +50,23 @@
         )
      )
 )   
-        ;сборка перестановки после вставки
+;Вход       
+;(INSERT-ELEM-TO-EACH-POS '2 '(3))
+
+;Выход
+;INSERT-ELEM-TO-EACH-POS ==> ((2 3) (3 2))
+
+;Вход
+;(INSERT-ELEM-TO-EACH-POS '1 '(2 3))
+
+;Выход
+;INSERT-ELEM-TO-EACH-POS ==> ((1 2 3) (2 1 3) (2 3 1))
+
+;Вход
+;(INSERT-ELEM-TO-EACH-POS '1 '(3 2))
+
+;Выход
+;INSERT-ELEM-TO-EACH-POS ==> ((1 3 2) (3 1 2) (3 2 1))
 (defun insert-elem-to-each-pos (elem lst)
     
     (cond
@@ -36,9 +78,34 @@
 )
 ; вставка элемента в разобранную перестановку
 ;Вспомогательная функция вставки элементов в каждую позицию
-;(1 (nil) (2 3))
-; (1 (2) (3))
-; (1 (2 3) nil)
+;Вход
+;(INSERT-ELEM-TO-EACH-POS-AUX '2 'NIL '(3))
+; (INSERT-ELEM-TO-EACH-POS-AUX '2 '(3) 'NIL)
+
+;Выход
+; INSERT-ELEM-TO-EACH-POS-AUX ==> NIL
+; INSERT-ELEM-TO-EACH-POS-AUX ==> ((3 2))
+
+;Вход
+; (INSERT-ELEM-TO-EACH-POS-AUX '1 'NIL '(2 3))
+ ;(INSERT-ELEM-TO-EACH-POS-AUX '1 '(2) '(3))
+; (INSERT-ELEM-TO-EACH-POS-AUX '1 '(2 3) 'NIL)
+
+;Выход
+ ;INSERT-ELEM-TO-EACH-POS-AUX ==> NIL
+ ;INSERT-ELEM-TO-EACH-POS-AUX ==> ((2 3 1))
+; INSERT-ELEM-TO-EACH-POS-AUX ==> ((2 1 3) (2 3 1))
+
+;Вход
+ ;(INSERT-ELEM-TO-EACH-POS-AUX '1 'NIL '(3 2))
+; (INSERT-ELEM-TO-EACH-POS-AUX '1 '(3) '(2))
+; (INSERT-ELEM-TO-EACH-POS-AUX '1 '(3 2) 'NIL)
+
+;Выход
+
+; INSERT-ELEM-TO-EACH-POS-AUX ==> NIL
+; INSERT-ELEM-TO-EACH-POS-AUX ==> ((3 2 1))
+; INSERT-ELEM-TO-EACH-POS-AUX ==> ((3 1 2) (3 2 1))
 (defun insert-elem-to-each-pos-aux (elem lst1 lst2)
     
     (cond
@@ -63,4 +130,3 @@
 (print (permutation '(1 2 3)))
 ;(print (transposition '(1 2 3)))
 ;((1 2 3) (1 3 2) (2 1 3) (2 3 1) (3 1 2) (3 2 1)) 
-
