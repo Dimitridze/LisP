@@ -1,3 +1,4 @@
+;Напишите генератор натуральных чисел: 0, 1, 2, 3, 4, 5, ...
 (defun generator (&optional(a 0))
 	(let
 		((numb a))
@@ -5,24 +6,40 @@
 	)
 )
 
-(defun print-pretty (gen &optional(count 1))
-	(loop for i from 1 to count do (print (funcall gen)))
+(defun random-print()
+(if (> (random 10) 5) (print (list(funcall next-number1)))  (print (funcall next-number2))   )
 )
-
-(setq next-number1 (generator))
+(setq next-number1 (generator)) 
 (setq next-number2 (generator))
-(setq next-number3 (generator 10))
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
+(random-print)
 
-
-(format t "next-number1:")
-(print-pretty next-number1)
-(print-pretty next-number1) 
-(print-pretty next-number1)
-
-(format t "~%~%next-number2:")
-(print-pretty next-number2)
-(print-pretty next-number2) 
-(print-pretty next-number2)
-
-(format t "~%~%next-number3:")
-(print-pretty next-number3 7)
+;1 
+;2 
+;3 
+;(1) 
+;4 
+;5 
+;6 
+;7 
+;8 
+;(2) 
+;(3) 
+;(4) 
+;9 
+;10 
+;(5) 
+;(6) 
