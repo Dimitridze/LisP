@@ -6,7 +6,7 @@
 ;)
 
 (defun every1 (pred lst)
-    (if
+    (not
         (null
             (mapcan (lambda (x)  
                             (if (funcall pred x) NIL (list T)                             
@@ -14,7 +14,7 @@
                     ) lst
             ) 
         ) 
-     T NIL
+     
     )
 )
 
