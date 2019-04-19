@@ -13,9 +13,9 @@
 	
 )
 
-;(print(hm `(1 a 3 `(e2 e4)) 0)) 
+;(print(atom-count `(1 a 3 `(e2 e4)) 0)) 
 ;3
 
-;(print(hm () 0)) 
+;(print(atom-count () 0)) 
 ;0
 
