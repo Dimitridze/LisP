@@ -5,4 +5,4 @@
 )
 
 (print(thisprog 'a 'b))
-
+;DEFUN THISPROG (&REST REST)
