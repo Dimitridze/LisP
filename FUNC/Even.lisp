@@ -1,3 +1,7 @@
+;Определить функционал, который перед каждым четным элементом списка вставляет его порядковый номер. 
+;Пример: (abcd ...) ==> (a 2 bc 4 d ...).
+;Длина списка не определена.
+
 (defun even (lst &optional(count 1))
     ((lambda (first rest)
         (cond ((null lst) nil)
@@ -13,19 +17,7 @@
     )
 
 
-;(defun even (lst &optional(count 1))
- ;   (mapcar(lambda (c)
- ;       (cond ((null lst) nil)
- ;           ((null (cdr lst)) lst)
- ;          ((evenp count) (cons count (car lst)  (setq c (+ 1 c))))
- ;                    (t (cons first (setq v(+ 1 c)))
- ;                     )
- ;                         
- ;    )
- ;    
- ;  )count
-;)lst
-    )
+
     
 ;(trace maxmin)
 (print (even  '(a b c d e)
