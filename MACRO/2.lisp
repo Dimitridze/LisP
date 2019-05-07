@@ -1,0 +1,15 @@
+(defmacro pop1 (var)
+    `(prog1
+       (setf first (car ,var))
+        (setf var (cdr ,var))
+        (format t "The new value of stack is: ~a" var) 
+    )
+     
+)
+
+
+
+
+(print(pop1 '(a b c)))
+;The new value of stack is: (B C)
+;A 
