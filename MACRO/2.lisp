@@ -1,11 +1,11 @@
 ;2.Определите макрос (POP стек), который читает из стека верхний элемент и
 ;меняет значение переменной стека.
 
-(defmacro pop1 (var)
+(defmacro pop1 (stack)
     `(prog1
-       (setf first (car ,var))
-        (setf var (cdr ,var))
-        (format t "~%The new value of stack is: ~a" var) 
+       (setf first (car ,stack))
+        (setf var (cdr ,stack))
+        (format t "~%The new value of stack is: ~a" stack) 
     )
     
      
