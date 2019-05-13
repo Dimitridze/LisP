@@ -27,25 +27,40 @@
    )
 )
 
+
+;возвращает список чисел от 1 до n
+(defun all-els-to-n (n)
+    (cond
+      ((eq n 0) NIL)
+      (t (append (all-els-to-n (1- n)) (list n))) 
+	    
+    )
+)
 ;вспомогательная функция удалить элемент списка
-(defun del-el (k lst)
-  (cond ((zerop k) (cdr lst))
-        ((= k (- (length lst) 1)) (butlast lst))
-        (t (append (subseq lst 0 k) (subseq lst (+ k 1))))))
- ;расчет минора матрицы в позиции (1,k)
+(defun del-el (lst n)
+  (cond ((= n 1) (cdr lst))
+        (t (cons (car lst) (del-el (cdr lst) (- n 1)))))) 
+ ;расчет минора матрицы в позиции (1,n)
+(defun minor (matr n m)
+  (let ((tmp (del-el matr n)))
+       (mapcar #'(lambda (x) (del-el x m)) tmp)))
  
-(defun minor (matr k)
- (let ((m (- k 1)))
-  (* (nth m (car matr)) (^ -1 m)
-     (det (mapcar #'(lambda (x) (del-el m x)) (cdr matr))))))
- 
+(defun mksig (n &optional (res '(1)))
+  (cond ((= n 1) res)
+        (t (mksig (- n 1) (append res (list (- (car (last res)))))))))
 ;расчет определителя квадратной матрицы любого порядка
  
 (defun determ (matr)
-  (let ((n (length matr)) (s nil))
-    (cond ((= n 2) (- (* (caar matr) (cadadr matr)) (* (cadar matr) (caadr matr))))
-          (t (dotimes (i n (apply '+ s))
-                (push (minor matr (+ i 1)) s))))))
+ (let ((n (length matr)))
+  (cond ((= 2 n) (- (* (caar matr) (cadr (cadr matr))) (* (cadar matr) (caadr matr))))
+        (t (let ((s (car matr)) (z (mksig n)) (w (all-els-to-n n)))
+            (apply '+ (mapcar #'(lambda (x y p) (* x y (det (minor matr 1 p)))) s z w)))
+        )
+  )
+ )
+)
+ 
+
 ;транспонирование
 (defun transp (matr)
   (apply 'mapcar (cons 'list matr))
