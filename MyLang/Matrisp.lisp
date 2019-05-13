@@ -69,8 +69,8 @@
 		;(print token-1)
         ; (print operation)
 		(cond
-			((eq operation '$) (setq val (maxmin token-1)))
-			((eq operation '%) (setq val (minmax token-1)))
+			((eq operation '+-) (setq val (maxmin token-1)))
+			((eq operation '-+) (setq val (minmax token-1)))
                         ((eq operation '@) (setq val (determ token-1)))
 			((eq operation '{})(setq val (transp token-1)))
 			
