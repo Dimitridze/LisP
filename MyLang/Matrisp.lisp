@@ -63,7 +63,7 @@
 
 ;транспонирование
 (defun transp (matr)
-  (apply 'mapcar (cons 'list matr))
+  (apply 'mapcar 'list matr)
 )
  
 
