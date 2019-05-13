@@ -27,26 +27,32 @@
    )
 )
 
-; Вспомогательная функция удалить элемент списка
+;вспомогательная функция удалить элемент списка
 (defun del-el (k lst)
   (cond ((zerop k) (cdr lst))
         ((= k (- (length lst) 1)) (butlast lst))
         (t (append (subseq lst 0 k) (subseq lst (+ k 1))))))
- ; Расчет минора матрицы в позиции (1,k)
+ ;расчет минора матрицы в позиции (1,k)
  
 (defun minor (matr k)
  (let ((m (- k 1)))
   (* (nth m (car matr)) (^ -1 m)
      (det (mapcar #'(lambda (x) (del-el m x)) (cdr matr))))))
  
-; Расчет определителя квадратной матрицы любого порядка
+;расчет определителя квадратной матрицы любого порядка
  
 (defun determ (matr)
   (let ((n (length matr)) (s nil))
     (cond ((= n 2) (- (* (caar matr) (cadadr matr)) (* (cadar matr) (caadr matr))))
           (t (dotimes (i n (apply '+ s))
                 (push (minor matr (+ i 1)) s))))))
+;транспонирование
+(defun transp (matr)
+  (apply 'mapcar (cons 'list matr))
+)
+ 
 
+ 
 
 
 (defmacro <> (&rest tokens)
@@ -65,7 +71,8 @@
 		(cond
 			((eq operation '$) (setq val (maxmin token-1)))
 			((eq operation '%) (setq val (minmax token-1)))
-            ((eq operation '@) (setq val (determ token-1)))
+                        ((eq operation '@) (setq val (determ token-1)))
+			((eq operation '{})(setq val (transp token-1)))
 			
 		)
 			 (print val)
