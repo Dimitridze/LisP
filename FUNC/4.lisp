@@ -6,7 +6,7 @@
 ;)
 
 (defun every1 (pred lst)
-    (not
+    
         (null
             (mapcan (lambda (x)  
                             (if (funcall pred x) NIL (list T)                             
@@ -14,8 +14,6 @@
                     ) lst
             ) 
         ) 
-     
-    )
 )
 
 (print (every1 'evenp  '(8 10  12)))
