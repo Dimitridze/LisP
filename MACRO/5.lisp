@@ -1,12 +1,8 @@
 ; 5. Определите в виде макроса форму (REPEAT e UNTIL p) паскалевского типа.
 
-(defmacro repeat ((&body body) condition)
-  (let ((n (gensym)) (name (gensym)))
-    `(labels ((,name (,n)
-                (if ,condition
-                    ,n
-                    (,name (progn ,@body)))))
-       (,name ()))))
+(defmacro repeat (e until p)
+`(if ,p nil
+  (progn ,e (repeat ,e until ,p))))
  
 (let ((i 0))
        (repeat ((print i) 
