@@ -1,6 +1,6 @@
 ;3. Определите лисповскую форму (IF условие p q) в виде макроса
 
-(defmacro IFF (cond р q)
+(defmacro MYIF (cond р q)
     `(if ,cond ,р ,q)
 )
     
