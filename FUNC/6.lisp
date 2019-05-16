@@ -11,10 +11,3 @@
 ;(A B C)
 
 
-(defun pl ( lst)
-    (mapcan (lambda(x)
-                   (list(+ x 1)) )lst
-    )
-)
-
-(print(pl  '( 1 2 3 4  )))
