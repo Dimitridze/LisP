@@ -1,4 +1,4 @@
-# Matrisp (Matrix Lisp Lisp)
+# Matrisp (Matrix Lisp)
 
 Макрос языка _Common Lisp_, позволяющий работать производить различные вычисления в матрицах в упрощенном виде. 
 
