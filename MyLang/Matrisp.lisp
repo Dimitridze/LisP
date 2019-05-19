@@ -78,7 +78,7 @@
 			                   ((eq second '-+) (print (minmax first)))
                                ((eq second '@) (print (determ first)))
 			                   ((eq second '{}) (print  (transp first)))
-                               )(setq mat1 first))(even (cdr rest) )))
+                               )(setq mat1 first))(out (cdr rest) )))
             
                                 
            (t              (and(cond
@@ -86,7 +86,7 @@
 			                   ((eq first '-+) (print (minmax mat1)))
                                ((eq first '@) (print (determ mat1)))
 			                   ((eq first '{}) (print  (transp mat1)))
-                               )(even rest)))
+                               )(out rest)))
                           
      )
              
