@@ -54,7 +54,7 @@
  (let ((n (length matr)))
   (cond ((= 2 n) (- (* (caar matr) (cadr (cadr matr))) (* (cadar matr) (caadr matr))))
         (t (let ((s (car matr)) (z (mksig n)) (w (all-els-to-n n)))
-            (apply '+ (mapcar #'(lambda (x y p) (* x y (det (minor matr 1 p)))) s z w)))
+            (apply '+ (mapcar #'(lambda (x y p) (* x y (determ (minor matr 1 p)))) s z w)))
         )
   )
  )
@@ -67,31 +67,43 @@
 )
  
 
- 
+ (defun out (whole)
+    ((lambda (first second rest)
+          
+        (cond 
+            ((null rest) '<>)
+            
+           ((listp first)  (and(and(cond
+                               ((eq second '+-) (print (maxmin first)))
+			                   ((eq second '-+) (print (minmax first)))
+                               ((eq second '@) (print (determ first)))
+			                   ((eq second '{}) (print  (transp first)))
+                               )(setq mat1 first))(even (cdr rest) )))
+            
+                                
+           (t              (and(cond
+                               ((eq first '+-) (print (maxmin mat1)))
+			                   ((eq first '-+) (print (minmax mat1)))
+                               ((eq first '@) (print (determ mat1)))
+			                   ((eq first '{}) (print  (transp mat1)))
+                               )(even rest)))
+                          
+     )
+             
+     
+   )(car whole)(cadr whole)(cdr whole)
+)
+    )
 
 
-(defmacro <> (&rest tokens)
+
+(defmacro <> (&rest tokens )
 	`(let
 		(
-         ;(whole ',tokens)
-         
-			(token-1 (car ',tokens))
-			(operation (cadr ',tokens))
-			(val Nil)
+                (out ',tokens)
+        	(val Nil)
 		)
-		
-		;(print whole)
-		;(print token-1)
-        ; (print operation)
-		(cond
-			((eq operation '+-) (setq val (maxmin token-1)))
-			((eq operation '-+) (setq val (minmax token-1)))
-                        ((eq operation '@) (setq val (determ token-1)))
-			((eq operation '{})(setq val (transp token-1)))
-			
-		)
-			 (print val)
-		
+      (even whole)
+
 	)
-    
 )
