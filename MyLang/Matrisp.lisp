@@ -100,10 +100,10 @@
 (defmacro <> (&rest tokens )
 	`(let
 		(
-                (out ',tokens)
+                (whole ',tokens)
         	(val Nil)
 		)
-      (even whole)
+      (out whole)
 
 	)
 )
